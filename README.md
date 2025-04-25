@@ -1,11 +1,11 @@
-**Transformación de Datos con Pipelines**
+# 🏗️ **Transformación de Datos con Pipelines**
 
-**Autor:** Carolina Pérez Molina
+## **Autor:** Carolina Pérez Molina
 
-**Descripción**
+## 🧾 **Descripción**
 Este proyecto tiene como objetivo la limpieza y transformación de datos utilizando sklearn.pipeline. Se trabaja con el conjunto de datos `dirty_cafe_sales.csv`, realizando un análisis exploratorio de datos (EDA), pues esto nos mostrará los errores que existen en el Dataframe, y luego según los errores encontrados se aplicaron transformaciones con pipelines.
 
-**Datos**
+## 📊 **Datos**
 El dataset `dirty_cafe_sales.csv` contiene 10,000 registros sobre ventas en una cafetería. Sin embargo, presenta problemas de calidad como valores faltantes, errores tipográficos y datos inconsistentes.
 
 - **Transaction ID:** Identificador único de cada transacción.
@@ -17,7 +17,7 @@ El dataset `dirty_cafe_sales.csv` contiene 10,000 registros sobre ventas en una 
 - **Location:** Ubicación de la compra (ej. "In-store", "Takeaway").
 - **Transaction Date:** Fecha de la compra.
 
-**Proceso realizado**
+## 🛠️ **Proceso realizado**
 - Se realizó un análisis exploratorio de datos (EDA) para observar los datos e identificar los errores que se corregirían con pipelines.
 - En el EDA se identificó que todas las columnas fueron leídas como object, por lo que se modificaron a `category` y `float` para poder aplicar transformaciones con pipelines.
 - Luego se realizaron trandormaciones con pipelines:
@@ -27,7 +27,7 @@ El dataset `dirty_cafe_sales.csv` contiene 10,000 registros sobre ventas en una 
      - Se aplicó la transformación `One Hot Encoding`, pero solo a los métodos de pago y la ubicación de la compra. No se utilizó en la variable `Item` para evitar la generación de demasiadas columnas, lo que dificultaría la interpretación de los datos. Además, para evitar la trampa de las variables ficticias, se eliminó la primera columna generada, asumiendo que si una fila tiene 0, el 1 corresponde a la categoría faltante. En este caso, la categoría implícita para la ubicación es `In-store` y para el método de pago es `Cash`. 
      - Finalmente, se realizó una transformación en la fecha, dividiendo la columna en día, mes y año.
 
-**Concluisones**
+## 📈 **Concluisones**
 - La transformación de variables categóricas permitió estandarizar los datos y facilitar su uso en análisis futuros sin generar un exceso de columnas innecesarias.
 - La estrategia de imputación de valores faltantes con la moda y el promedio garantizó que no se perdiera información relevante en el dataset.
 - No escalar los datos numéricos fue una decisión acertada, ya que al tratarse de precios y cantidades, conservar su magnitud original permite una mejor interpretación.
